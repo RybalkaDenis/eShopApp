@@ -1,0 +1,55 @@
+
+<div ng-controller="ProductCtrl">
+  <div class="container">
+    <div class="row filters-images-holder">
+      <div class="filter-image col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+      <div class="filter-image col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+      <div class="filter-image col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+      <div class="filter-image col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+      <div class="filter-image col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+      <div class="filter-image col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+      <div class="filter-image col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+      <div class="filter-image col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+      <div class="filter-image col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+      <div class="filter-image col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+      <div class="filter-image col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+      <div class="filter-image col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+    </div>
+  </div>
+
+  <div class="container filters">
+    <div class="row filters-holder">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <select ng-model="predicate">
+          <option value="price" >По цене(от дешевых к дорогим)</option>
+          <option value="-price">По цене(от дорогих к дешевым)</option>
+          <option value="date">По дате</option>
+          <option selected>По популярности</option>
+        </select>
+      </div>
+
+      <div class="quantity col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <span>{{quantity}} товаров</span>
+      </div>
+
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+        <span>На странице</span>
+        <select ng-model="perPage"  class="pull-right" ng-change="makePages()">
+          <option selected value="6" >6</option>
+          <option value="12">12</option>
+          <option value="24">24</option>
+          <option value="48" >48</option>
+        </select>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div  class="container products">
+    <div class="row product-row">
+      <product ng-repeat="product in render|limitTo:perPage|orderBy:predicate:reverse"></product>
+    </div>
+  </div>
+  <pagination></pagination>
+</div>

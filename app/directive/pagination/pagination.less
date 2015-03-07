@@ -1,0 +1,35 @@
+.pagination-container{
+
+  height:60px;
+  margin-bottom:20px;
+  padding-top:10px;
+  text-align: center;
+}
+.pagination{
+  padding:0;
+  text-align:center;
+}
+.pagination>li{
+  width:40px;
+  height:40px;
+  display:table-cell;
+  border-radius:50%;
+  text-align:center;
+  vertical-align: middle;
+  margin-left:20px;
+  cursor:pointer;
+  background-color: @element;
+}
+.pagination>li:hover{
+  background-color: darken(@background,20%);
+}
+.pagination>li.disabled{
+  background-color: darken(@background,20%);
+  cursor:no-drop;
+}
+.pagination>li.active{
+  background-color: @orange;
+}
+.green{
+  border:1px solid green;
+}

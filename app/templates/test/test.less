@@ -1,0 +1,25 @@
+.loading-spinner-container{
+  display:inline;
+  width:100px;
+  height:100px;
+  border:1px solid red;
+  background-color:@element;
+  position:absolute;
+  top:50%;
+  left:0;
+  z-index: @z-index-spinner;
+}
+.loading-spinner{
+  width:50px;
+  height:50px;
+  .border-radius(100%);
+  border: 12px solid lighten(@orange, 30%);
+  border-top: 12px solid @orange;
+}
+
+.test-page{
+  min-height:800px;
+  background:@element;
+  margin-bottom:20px;
+}
+

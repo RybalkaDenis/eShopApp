@@ -1,0 +1,31 @@
+<div class="container main-page">
+  <div class="main-slider" >
+
+    <div  ng-repeat="slide in slides" >
+        <div  ng-show="currentSlide == $index" class="slide">{{$index}}</div>
+    </div>
+
+    <span ng-click="slider.nextSlide()" ng-show="slider.hasNext()" class="fa-stack fa-lg chevron-holder right">
+      <i class="fa fa-circle-thin fa-stack-2x"></i>
+      <i class="fa fa-chevron-right fa-stack-1x"></i>
+    </span>
+
+     <span ng-click="slider.previousSlide()" ng-show="slider.hasPrevious()" class="fa-stack fa-lg chevron-holder left">
+      <i class="fa fa-circle-thin fa-stack-2x"></i>
+      <i class="fa fa-chevron-left fa-stack-1x"></i>
+    </span>
+
+    <ul class="slide-list-set">
+      <li ng-repeat="slide in slides" class="slide-list">
+        <div></div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="news-container">
+      <div class="news-holder" ng-repeat="news in newsSet |limitTo:limit"></div>
+  </div>
+
+  <button class="button-white large" ng-click="limit = limit+2">Больше новостей</button>
+</div>
+

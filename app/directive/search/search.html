@@ -1,0 +1,28 @@
+<div ng-show="searchBody" class="search-body container" ng-controller="SearchCtrl">
+ <div class="search-container container">
+   <a href="#/products"><div ng-click="hideSearchBody()" class="close-circle">x</div></a>
+
+  <form name="search-form" id="search-form" class="form-horizontal" >
+    <fildset>
+      <legend>ПОИСК</legend>
+    <div class="form-group">
+      <input type="text" id="search" name="search" ng-change="search()" ng-model="mySearch" class="form-control search-input"/>
+    </div>
+    </fildset>
+  </form>
+   <div class="search-product-container">
+      <div class="search-product" ng-repeat="product in searchResult | limitTo:4">
+
+        <div class="image-holder">
+          <img ng-src="{{product.src}}"/>
+        </div>
+        <div class="search-product-info">
+          <p>{{product.title}}</p>
+          <p>{{product.price}}</p>
+          <button class="button-orange buy" ng-click="addToCart($index)">В корзину</button>
+        </div>
+      </div>
+   </div>
+   <button ng-show="searchResult" class="button-orange search" ng-click="toSearchPage(searchResult)">На страницу поиска</button>
+ </div>
+</div>

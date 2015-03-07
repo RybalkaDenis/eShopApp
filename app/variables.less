@@ -1,0 +1,99 @@
+//My COLORS
+@background:#efeeed;
+@element:#ffffff;
+@red: #ee3023;
+@black: #201f1f;
+@link:#1c80f3;
+@orange:#ff6600;
+
+///////////////////////////////////
+
+
+//My TYPOGRAPHY
+
+@base: 18px;
+@large: ceil((@base * 1.25));
+@small: ceil((@base * 0.85));
+@xsmall : ceil((@base * 0.75));
+
+@bold: MyriadProBoldCond;
+@normal: MyriadProCond;
+@redFont:#ee3023;
+@blackFont:#201f1f;
+@linkColor:#1c80f3;
+
+.font(@size,@type,@color){
+  font-size:@size;
+  font-family:@type;
+  color: @color;
+}
+@font-face {
+  font-family: @normal;
+  src: url(fonts/myriadprocond0.ttf);
+}
+@font-face {
+  font-family:@normal;
+  src: url(fonts/myriadprocond0.woff);
+}
+@font-face {
+  font-family: @bold;
+  src: url(fonts/myriadproboldcond0.ttf);
+}
+@font-face {
+  font-family: @bold;
+  src: url(fonts/myriadproboldcond0.woff);
+}
+/////////////////////////////////////////
+
+
+//My BORDERS
+@borderHeader:1px solid #cfc8bc;
+
+.border-radius(@radius){
+  -webkit-border-radius: @radius; // Safari
+  -moz-border-radius: @radius; //FF
+  border-radius: @radius; // Opera,Chrome,IE,iOS,Android
+}
+/////////////////////////////////////
+
+
+//My buttons
+.button-orange{
+  background:@orange;
+  border:1px solid darken(@orange,15%);
+  width:80%;
+  .font(@base,@bold,@element);
+}
+.button-orange:hover{
+  background-color: lighten(@orange,15%)
+}
+
+
+//My FORMS
+input{
+  display:block;
+  padding:20px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width:90%;
+  height:30px ;
+  margin-bottom:20px;
+}
+//////////////////////////////////////////
+
+//My Animation
+.transform(@transform){
+  -webkit-transform:@transform;
+  transform:@transform;
+}
+
+
+//////////////////////////////
+//Z-index MAP
+
+@z-index-shadow: 1000;
+@z-index-search-body:1010;
+@z-index-spinner:1040;
+@z-index-modal: 1050;
+@z-index-tooltip: 1060;
+////////////////////////////////////

@@ -1,0 +1,27 @@
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left">
+
+  <div class="button-holder">
+    <button class="return button" ng-click="hideCart()">Вернутся</button>
+    <button class="button order" >Заказать</button>
+  </div>
+
+  <hr/>
+
+  <ul class="cart-product-list">
+    <li class="cart-product" ng-repeat="item in cart">
+      <div ng-click="removeFromCart($index)" class="close-circle">x</div>
+      <div class="cart-product-holder">
+        <div class="cart-product-image-holder">
+          <img ng-src ="{{item.images[0]}}" class="cart-product-image" alt="product"/>
+        </div>
+        <h4 class="cart-product-title">{{item.title}}</h4>
+        <h4 class="cart-product-price">{{item.price|currency}}</h4>
+        <h4 class="cart-product-quantity"></h4>
+        <i class="cart-product-remover"></i>
+      </div>
+    </li>
+  </ul>
+
+  <hr/>
+
+</nav>

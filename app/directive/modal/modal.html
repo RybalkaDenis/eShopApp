@@ -1,0 +1,80 @@
+<div class="container modal-container" ng-controller="ModalCtrl">
+  <div class="modal-window">
+
+    <div class="row modal-window">
+
+      <div ng-click="hideModal()" class="close-circle">x</div>
+      <div ng-click="signUp()" ng-class={active:!registration} class="log-in-tab col-lg-6 col-md-6 col-sm-6 col-xs-6"><h2>Вход</h2></div>
+      <div ng-click="registrate()" ng-class={active:registration} class="sign-up-tab col-lg-6 col-md-6 col-sm-6 col-xs-6"><h2>Регистрация</h2> </div>
+    </div>
+    <div class="row">
+
+      <div class="auth-form col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <p ng-hide="registration">Войти с помощью e-mail</p>
+        <p ng-show="registration">Зарегестрироваться с помощью e-mail</p>
+
+
+
+      <form name="MyFormReg" ng-show="registration">
+
+        <input name="email" id="email" ng-model="email" type="text" placeholder="Email-адресс" correct-email="" unique-email="" required/>
+
+        <div class="warn" ng-show="MyFormReg.email.$error.correctEmail&& !MyFormReg.email.$error.required">
+          <p>Введите правильный e-mail</p>
+        </div>
+
+        <div class="warn" ng-show="MyFormReg.email.$error.required && MyFormReg.email.$dirty">
+          <p>Введите e-mail</p>
+        </div>
+
+        <div class="warn" ng-show="MyFormReg.email.$error.uniqueEmail && MyFormReg.email.$dirty">
+          <p>Пользователь с данным email уже зарегестрирован</p>
+        </div>
+
+
+
+        <input ng-model="password" name="password" type="password" placeholder="Пароль" required correct-password  />
+
+        <div class="warn" ng-show="MyFormReg.password.$error.required && MyFormReg.password.$dirty">
+          <p>Введите пароль</p>
+        </div>
+
+        <div class="warn" ng-show="MyFormReg.password.$error.correctPassword && !MyFormReg.password.$error.required">
+          <p>Слишком слабый пароль   <i tooltip="passwordtooltip" class="fa fa-question-circle password-tooltip"></i></p>
+        </div>
+
+
+        <input ng-model="confirmpassword" name="confirmpassword" type="password"
+               placeholder="Повторите пароль" required must-equal="password" />
+
+
+        <div class="warn" ng-show="MyFormReg.confirmpassword.$error.mustEqual && MyFormReg.confirmpassword.$dirty">
+          <p>Пароли не совпадают</p>
+        </div>
+
+        <button  disable-mark="MyFormReg.$invalid" disable-act="registerUser()">Зарегестрироваться</button>
+      </form>
+
+
+
+
+        <form name="MyFormAuth"  ng-hide="registration">
+
+          <input name="currentUser" ng-model ="currentUser" type="text" placeholder="Email-адресс" required/>
+          <div class="warn" ng-show="MyFormAuth.currentUser.$error.required && MyFormAuth.currentUser.$dirty">
+            <p>Введите e-mail</p>
+          </div>
+
+          <input name="currentPassword" ng-model="currentPassword" type="password" placeholder="Пароль" required />
+          <div class="warn" ng-show="MyFormAuth.currentPassword.$error.required && MyFormAuth.currentPassword.$dirty">
+            <p>Введите пароль</p>
+          </div>
+
+          <button  disable-mark="MyFormAuth.$invalid"  disable-act="authenticate()">Войти</button>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

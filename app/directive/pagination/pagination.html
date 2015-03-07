@@ -1,0 +1,15 @@
+<div class="container pagination-container">
+  <ul class="pagination">
+    <li class="previous" ng-click="goToFirstPage()"     ng-class="{disabled:hasPrevious()}"><<</li>
+    <li class="previous" ng-click="goToPreviousPage()"  ng-class="{disabled:hasPrevious()}"><</li>
+
+    <li class="page"></li>
+    <li class="page"></li>
+    <li class="page"></li>
+
+
+    <li class="next" ng-click="goToNextPage()"  ng-class="{disabled:hasNext()}">></li>
+    <li class="next" ng-click="goToLastPage()"   ng-class="{disabled:hasNext()}">>></li>
+  </ul>
+</div>
+

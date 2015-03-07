@@ -1,0 +1,181 @@
+/* General styles for all menus */
+.cbp-spmenu {
+  background: @background;
+  position: fixed;
+}
+
+.button-holder{
+  margin-top:30px;
+  margin-bottom:30px;
+  width:100%;
+  text-align:center;
+}
+.cbp-spmenu .return.button,
+.cbp-spmenu .order.button{
+  width:45%;
+  height:50px;
+}
+
+.cbp-spmenu .return.button{
+  .font(@base,@bold,@black);
+  border:5px solid @orange;
+  margin-right:10px;
+  background-color: @element;
+}
+
+.cbp-spmenu .order.button{
+  background-color: @orange;
+  .font(@base,@bold,@element);
+  border:1px solid darken(@orange,15%);
+}
+.cbp-spmenu hr{
+  width:94%;
+  height:5px;
+  background-color:@orange;
+}
+
+
+.cart-product-list{
+  margin:0;
+  padding:0;
+}
+
+.cart-product{
+  display:block;
+  list-style: none;
+  margin:0;
+  padding:3%;
+  padding-bottom:0;
+  position:relative;
+}
+.cart-product .close-circle{
+  width:20px;
+  height:20px;
+  top:20px;
+  right:10px;
+  font-size:11px;
+  text-align:center;
+  border:2px solid @black;
+}
+
+.cart-product-holder{
+  width:100%;
+  height:130px;
+  text-align:center;
+  position:relative;
+  background-color:@element;
+}
+.cart-product-image-holder{
+  float:left;
+  width:130px;
+  height:130px;
+}
+.cart-product-image{
+  width:100px;
+  height:100px;
+  float:left;
+  margin-top:10px;
+}
+.cart-product-holder h4{
+  .font(@base,@normal,@black);
+}
+.cart-product-title{
+  float:left;
+}
+.cart-product-price{
+ float:right;
+}
+
+/* Orientation-dependent styles for the content of the menu */
+
+.cbp-spmenu-vertical {
+  width: 400px;
+  height: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Vertical menu that slides from the left or right */
+
+.cbp-spmenu-left {
+  left: -400px;
+}
+
+.cbp-spmenu-right {
+  right: -240px;
+}
+
+.cbp-spmenu-left.cbp-spmenu-open {
+  left: 0px;
+}
+
+.cbp-spmenu-right.cbp-spmenu-open {
+  right: 0px;
+}
+
+
+/* Push classes applied to the body */
+
+.cbp-spmenu-push {
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+}
+
+.cbp-spmenu-push-toright {
+  left: 240px;
+}
+
+.cbp-spmenu-push-toleft {
+  left: -240px;
+}
+
+/* Transitions */
+
+.cbp-spmenu,
+.cbp-spmenu-push {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+/* Example media queries */
+/*
+@media screen and (max-width: 55.1875em){
+
+  .cbp-spmenu-horizontal {
+    font-size: 75%;
+    height: 110px;
+  }
+
+  .cbp-spmenu-top {
+    top: -110px;
+  }
+
+  .cbp-spmenu-bottom {
+    bottom: -110px;
+  }
+
+}
+
+@media screen and (max-height: 26.375em){
+
+  .cbp-spmenu-vertical {
+    font-size: 90%;
+    width: 190px;
+  }
+
+  .cbp-spmenu-left,
+  .cbp-spmenu-push-toleft {
+    left: -190px;
+  }
+
+  .cbp-spmenu-right {
+    right: -190px;
+  }
+
+  .cbp-spmenu-push-toright {
+    left: 190px;
+  }
+}
+*/

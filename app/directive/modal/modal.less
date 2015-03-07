@@ -1,0 +1,97 @@
+.modal-container{
+  position: absolute;
+  width:100%;
+  top: -350px;
+  transition: all 0.5s linear;
+}
+
+.modal-container.visible{
+  top: 100px;
+}
+
+.modal-window{
+  .font(@base, @normal, @black);
+  width: 620px;
+  margin:auto;
+  text-align:center;
+  background-color:@element;
+  position:relative;
+  z-index: @z-index-modal;
+}
+
+.log-in-tab,.sign-up-tab{
+  text-align:center;
+  margin-bottom: 20px;
+  cursor:pointer;
+}
+
+.log-in-tab.active,.sign-up-tab.active{
+  background-color:lighten(@orange,15%);
+  border:1px solid darken(@orange,15%);
+  .font(@base, @normal, @element);
+}
+.auth-form form input{
+  margin:auto;
+  margin-bottom:20px;
+  transition:500ms linear;
+  -webkit-transition:500ms linear;
+}
+.auth-form form input.ng-invalid.ng-dirty{
+  outline:3px solid red;
+}
+
+
+.auth-form button{
+  background-color: @orange;
+  width:90%;
+  padding:10px;
+  cursor:pointer;
+  .font(@base,@normal,@element);
+  margin-bottom:20px;
+  border:1px solid darken(@orange,15%);
+
+}
+.auth-form button.disabled{
+  width:50%;
+}
+.auth-form button:hover{
+  background-color: lighten(@orange,15%);
+}
+
+
+.close-circle{
+  position:absolute;
+  top:-15px;
+  right:-15px;
+  background-color:@element;
+  .border-radius(50%);
+  .font(@base,@bold,@black);
+  width:40px;
+  height:40px;
+  cursor:pointer;
+  z-index:2;
+  border: 6px solid black;
+  transition:transform linear 0.5s;
+  transition:-webkit-transform 0.5s;
+}
+.close-circle:hover{
+  .transform(rotate(360deg))
+}
+
+.warn{
+  .font(@xsmall,@normal,@red);
+  i{
+    margin-left:10px;
+    background-color: @element;
+  }
+}
+
+@media screen and (max-width: 55.1875em){
+
+}
+
+@media screen and (max-height: 26.375em){
+
+}
+
+

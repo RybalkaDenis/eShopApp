@@ -1,0 +1,30 @@
+
+
+<div class="container product-stand">
+
+  <div ng-switch on="carousel" class = "product-image-view col-lg-7 col-md-12 col-sm-12 col-xs-12">
+    <div ng-show="slider.currentSlide == $index" ng-repeat="product in product.images"><img ng-src="{{product}}"/>
+      <div class="icon-left">
+        <i ng-show="slider.hasPrevious()" ng-click="slider.previous()" class="fa fa-arrow-circle-o-left fa-4x"></i>
+      </div>
+      <div class="icon-right">
+        <i ng-show="slider.hasNext()" ng-click="slider.next()" class="fa fa-arrow-circle-o-right fa-4x"></i>
+      </div>
+    </div>
+  </div>
+  <div class="product-description col-lg-5 col-md-12 col-sm-12 col-xs-12" >
+    <h2>{{product.title}}</h2><span>{{product.description}}</span>
+    <br/>
+    <span class="price-holder">{{product.price|currency}}</span>
+    <br/>
+
+    <button ng-click="showCart()">В корзину</button>
+    <ul>
+      <li ng-repeat="image in product.images">
+        <img  ng-click="slider.currentSlide = $index"  ng-src="{{product.images[$index]}}"/>
+      </li>
+    </ul>
+  </div>
+
+
+</div>

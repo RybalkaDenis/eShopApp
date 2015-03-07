@@ -1,0 +1,149 @@
+<!doctype html>
+<html ng-app="eShopApp" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
+
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+
+    <link rel="stylesheet/less" type="text/css" href="app.less">
+    <script src="bower_components/less/dist/less.js"></script>
+    <script src="less.min.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body class="cbp-spmenu-push">
+
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <shadow></shadow>
+    <modal></modal>
+    <cart></cart>
+    <search></search>
+    <up-arrow></up-arrow>
+
+<div ng-controller="BaseCtrl" class="content-wrapper">
+	<div class="container header">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 logo">
+				<span class="logo-red">ВАШ</span> <span class="logo-black">ЛОГОТИП</span>
+			</div>
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<div class="row contact-information">
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><i class="fa fa-phone"> (090)223-44-66</i></div>
+						<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><i class="fa fa-skype">  help@trendd</i></div>
+				</div>
+				<div class="row head-btn">
+						<div class="cart col-lg-4 col-md-4 col-sm-4 col-xs-4"><a href="#/search"><i class="fa fa-search fa-2x"></i></a></div>
+						<div ng-click="showCart()" id="showLeftPush" class="registr col-lg-4 col-md-4 col-sm-4 col-xs-4"><i class="fa fa-shopping-cart fa-2x"></i></div>
+            <div  ng-click="showModal()" class="login col-lg-4 col-md-4 col-sm-4 col-xs-4"><span class="fa-stack">
+              <i class="fa fa-square-o fa-stack-2x"></i><i class="fa fa-user fa-stack-1x"></i></span>
+            </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+  <div class="container">
+      <div class="header-nav">
+        <ul class="nav nav-pills nav-justified">
+          <li class="pill" ng-repeat="nav in navLinks"><a ng-href="{{nav.url}}" ng-bind="nav.title"></a></li>
+        </ul>
+      </div>
+    </div>
+</div>
+   <!-- <spinner></spinner>-->
+  <ng-view ></ng-view>
+<div class="container bottom"></div>
+
+
+
+    <!-- build:js(.) scripts/oldieshim.js -->
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <![endif]-->
+    <!-- endbuild -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/ng-lodash/build/ng-lodash.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="app.js"></script>
+
+        <!-- endbuild -->
+
+    <!-- controllers -->
+    <script src="directive/search/searchCtrl.js"></script>
+    <script src="templates/main/main.js"></script>
+    <script src="templates/products/products.js"></script>
+    <script src="templates/payments/payments.js"></script>
+    <script src="templates/delivery/delivery.js"></script>
+    <script src="templates/about/about.js"></script>
+    <script src="templates/test/test.js"></script>
+    <!-- controllers -->
+
+
+    <!-- directives -->
+    <script src="directive/myProduct/myProduct.js"></script>
+    <script src="directive/cart/cart.js"></script>
+    <script src="directive/shadow/shadow.js"></script>
+    <script src="directive/modal/modal.js"></script>
+    <script src="directive/spinner/spinner.js"></script>
+    <script src="directive/pagination/pagination.js"></script>
+    <script src="directive/mustEqual/mustEqual.js"></script>
+    <script src="directive/uniqueEmail/uniqueEmail.js"></script>
+    <script src="directive/correctEmail/correctEmail.js"></script>
+    <script src="directive/correctPassword/correctPassword.js"></script>
+    <script src="directive/tooltip/tooltip.js"></script>
+    <script src="directive/disableMark/disableMark.js"></script>
+    <script src="directive/search/search.js"></script>
+    <script src="directive/upArrow/upArrow.js"></script>
+    <!-- directives -->
+
+    <!-- services -->
+    <script src="service/messaging/messaging.js"></script>
+    <script src="service/events/events.js"></script>
+    <script src="service/mongolab/mongolab.js"></script>
+    <script src="service/productDataService/productDataService.js"></script>
+    <script src="service/userDataService/userDataService.js"></script>
+    <script src="service/slider/slider.js"></script>
+    <script src="service/sha/sha.js"></script>
+    <script src="service/md5/md5.js"></script>
+    <script src="service/utf8encode/utf8encode.js"></script>
+    <script src="service/authenticate/authenticate.js"></script>
+    <script src="service/cartService/cartService.js"></script>
+    <script src="service/paginationService/paginationService.js"></script>
+    <script src="service/myAnimate/myAnimate.js"></script>
+    <script src="service/awesomeCache/awesomeCache.js"></script>
+    <!-- services -->
+
+    <!-- model-->
+    <script src="model/modelTransformer/modelTransformer.js"></script>
+    <script src="model/product/product.js"></script>
+    <script src="model/user/user.js"></script>
+    <!-- model-->
+
+</body>
+</html>

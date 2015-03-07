@@ -1,0 +1,74 @@
+.main-page{
+  min-height:800px;
+  background:@element;
+  margin-bottom:20px;
+  padding:20px;
+}
+.main-slider{
+  width:100%;
+  height:350px;
+  border:1px solid red;
+  position:relative;
+  vertical-align: middle;
+}
+.slide{
+  background:red;
+  width:100%;
+  height:350px;
+}
+.chevron-holder{
+  position:absolute;
+  height:20%;
+  top:40%;
+  font-size:40px;
+  color:darken(@background, 10%)
+}
+.chevron-holder.left{
+  left:0;
+}
+.chevron-holder.right{
+  right:0;
+}
+.slide-list-set{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  text-align:center;
+}
+.slide-list{
+  list-style: none;
+  display:inline-block;
+  margin:10px;
+}
+.slide-list> div{
+   width:10px;
+  height:10px;
+  background-color:@orange;
+  .border-radius(50%);
+}
+.news-container{
+  border:1px solid red;
+  width:100%;
+  margin:20px 0;
+  padding:10px;
+}
+.news-holder{
+  width:46%;
+  margin:10px 2%;
+  height:200px;
+  display:inline-block;
+  border:1px solid green;
+}
+.button-white{
+  width:100%;
+  margin:10% 0;
+  border:4px solid @orange;
+  margin:auto;
+  background-color: @element;
+  height: 60px;
+  .font(@large, @normal, @black);
+}
+.button-white:hover{
+  border:4px solid darken(@orange,5%);
+}
+
