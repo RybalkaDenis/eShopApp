@@ -10,14 +10,13 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
-
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
 
     <link rel="stylesheet/less" type="text/css" href="app.less">
     <script src="bower_components/less/dist/less.js"></script>
-    <script src="less.min.js"></script>
+
     <!-- endbuild -->
   </head>
   <body class="cbp-spmenu-push">
@@ -56,7 +55,7 @@
   <div class="container">
       <div class="header-nav">
         <ul class="nav nav-pills nav-justified">
-          <li class="pill" ng-repeat="nav in navLinks"><a ng-href="{{nav.url}}" ng-bind="nav.title"></a></li>
+          <li class="pill " ng-repeat="nav in navLinks"><a ng-href="{{nav.url}}" ng-bind="nav.title"></a></li>
         </ul>
       </div>
     </div>
@@ -102,6 +101,7 @@
     <script src="templates/delivery/delivery.js"></script>
     <script src="templates/about/about.js"></script>
     <script src="templates/test/test.js"></script>
+    <script src="templates/admin/admin.js"></script>
     <!-- controllers -->
 
 
@@ -120,6 +120,7 @@
     <script src="directive/disableMark/disableMark.js"></script>
     <script src="directive/search/search.js"></script>
     <script src="directive/upArrow/upArrow.js"></script>
+    <script src="directive/adminMenu/adminMenu.js"></script>
     <!-- directives -->
 
     <!-- services -->
@@ -137,12 +138,14 @@
     <script src="service/paginationService/paginationService.js"></script>
     <script src="service/myAnimate/myAnimate.js"></script>
     <script src="service/awesomeCache/awesomeCache.js"></script>
+    <script src="service/systemDataService/systemDataService.js"></script>
     <!-- services -->
 
     <!-- model-->
     <script src="model/modelTransformer/modelTransformer.js"></script>
     <script src="model/product/product.js"></script>
     <script src="model/user/user.js"></script>
+    <script src="model/slider/slider.js"></script>
     <!-- model-->
 
 </body>

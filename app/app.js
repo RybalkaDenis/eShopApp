@@ -34,11 +34,15 @@ angular.module('eShopApp', [
       .when('/products/:id', {
         templateUrl: 'templates/about/about.html',
         controller: 'AboutCtrl'
+      }).when('/admin', {
+        templateUrl : 'templates/admin/admin.html',
+        controller:'AdminCtrl'
       }).when('/test',{
-		  templateUrl:'templates/test/test.html',
-	  controller:'TestCtrl'})
+		    templateUrl:'templates/test/test.html',
+	       controller:'TestCtrl'
+      })
       .otherwise({
-        redirectTo: '/main'
+        redirectTo: '/home'
       });
   });
 
@@ -78,4 +82,9 @@ angular.module('eShopApp').run(function(cartService){
 angular.module('eShopApp').run(function(slider){
   slider.init();
 });
-
+angular.module('eShopApp').run(function(systemDataService){
+  systemDataService.init();
+});
+angular.module('eShopApp').run(function(events, messaging){
+  messaging.publish(events.message._SLIDER_INIT_STATE_,[{"id":"slider"}]);
+});

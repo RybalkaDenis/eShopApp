@@ -4,25 +4,63 @@
   margin-bottom:20px;
   padding:20px;
 }
-.main-slider{
+.slider-container{
   width:100%;
-  height:350px;
-  border:1px solid red;
+  height:360px;
+  border:5px solid @orange;
   position:relative;
   vertical-align: middle;
 }
-.slide{
-  background:red;
+.slide-holder{
   width:100%;
-  height:350px;
+  height:360px;
+  overflow: hidden;
+  position:relative;
+
 }
+.slide{
+  width:100%;
+  height:360px;
+  -webkit-transition:1s linear ;
+  transition:1s linear;
+  position:absolute;
+  top:0;
+  left:0;
+}
+.slide.ng-hide-add{
+  -webkit-animation: 1s hide;
+  animation:1s hide;
+}
+@keyframes hide {
+from{left:0;}
+  to{left:-100%;}
+}
+@-webkit-keyframes hide {
+  from{left:0;}
+  to{left:-100%;}
+}
+.slide.ng-hide-remove{
+  -webkit-animation: 1s show;
+  animation:1s show;
+}
+@keyframes show {
+  from{left:100%;}
+  to{left:0%;}
+}
+@-webkit-keyframes show {
+  from{left:100%;}
+  to{left:0;}
+}
+
 .chevron-holder{
   position:absolute;
   height:20%;
   top:40%;
   font-size:40px;
-  color:darken(@background, 10%)
+  color:lighten(@orange, 10%);
+  cursor: pointer;
 }
+
 .chevron-holder.left{
   left:0;
 }
@@ -45,6 +83,10 @@
   height:10px;
   background-color:@orange;
   .border-radius(50%);
+  cursor: pointer;
+}
+.slide-list.active> div{
+  background-color:@element;
 }
 .news-container{
   border:1px solid red;
@@ -59,6 +101,21 @@
   display:inline-block;
   border:1px solid green;
 }
+.news-holder.ng-enter{
+  -webkit-animation: 1s grow;
+  animation:1s grow;
+  heigth:0px;
+}
+
+@keyframes grow {
+  from{height:0px;}
+  to{height:200px;}
+}
+@-webkit-keyframes grow {
+  from{height:0px;}
+  to{height:200px;}
+}
+
 .button-white{
   width:100%;
   margin:10% 0;

@@ -45,8 +45,11 @@ angular.module('eShopApp').constant('events',{
     _HIDE_SEARCH_BODY_:'_HIDE_SEARCH_BODY_',
 
     //Slider
+    _SLIDER_INIT_STATE_:'_SLIDER_INIT_STATE_',
+    _SLIDER_INIT_SUCCESS_:'_SLIDER_INIT_SUCCESS_',
     _SET_SLIDE_:'_SET_SLIDE_',
     _PREVIOUS_SLIDE_:'_PREVIOUS_SLIDE_',
-    _NEXT_SLIDE_:'_NEXT_SLIDE_'
+    _NEXT_SLIDE_:'_NEXT_SLIDE_',
+    _SLIDER_STATE_:'_SLIDER_STATE_'
   }
 });

@@ -1,0 +1,47 @@
+<ul class="admin-menu">
+  <li ng-mouseover="over()"><i class="fa fa-5x fa-home"></i></li>
+</ul>
+<div ng-show="adminMenu.home">
+  <h1>Главная страница</h1>
+  <div class="home-slider-controller">
+   <div class="form-holder">
+    <form>
+      <legend>Управление слайдером</legend>
+      <div class="form-group">
+        <label for="timer" class="col-sm-2 control-label">Установить задержку:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-controll" id="timer" placeholder="в миллисекундах"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="picture" class="col-sm-2 control-label">Добавить слайд:</label>
+        <div class="col-sm-10">
+          <input type="file" class="form-controll" id="picture" placeholder="в миллисекундах"/>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success ">Сохранить</button>
+      <button type="submit" class="btn btn-danger ">Удалить слайд</button>
+    </form>
+   </div>
+  </div>
+  <div class="home-slider-controller">
+    <div class="form-holder">
+      <form>
+        <legend>Управление модулями главной страницы</legend>
+        <div class="form-group">
+          <label for="timer" class="col-sm-2 control-label">Установить задержку:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-controll" id="timer" placeholder="в миллисекундах"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="picture" class="col-sm-2 control-label">Добавить слайд:</label>
+          <div class="col-sm-10">
+            <input type="file" class="form-controll" id="picture" placeholder="в миллисекундах"/>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-success ">Сохранить</button>
+        <button type="submit" class="btn btn-danger ">Удалить слайд</button>
+      </form>
+    </div>
+</div>

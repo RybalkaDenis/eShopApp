@@ -1,17 +1,15 @@
-angular.module('eShopApp').controller('TestCtrl',[ 'messaging','events','$scope','$controller','$cookieStore','awesomeCache',
-  function(messaging,events,$scope, $controller, $cookieStore, awesomeCache){
+angular.module('eShopApp').controller('TestCtrl',[ 'messaging','events','$scope',
+  '$controller','$cookieStore','awesomeCache','$location','User','modelTransformer',
+  function(messaging,events,$scope, $controller, $cookieStore, awesomeCache, $location, User, modelTransformer){
   $controller('MainCtrl',{$scope: $scope});
 
 
+   if(!$scope.myUser){
+     $location.path('/home')
+   }else{
+     if($scope.myUser.UserIsAdmin){
+       $location.path('/admin')
+     }
+   }
 
-    $scope.my = awesomeCache.get('getProducts');
-  //  $scope.my = cache.get('getProducts');
-
-
-
-
-
-   //$cookieStore.put('id','value');
-
-    $scope.myCook = $cookieStore.get('id');
 }]);

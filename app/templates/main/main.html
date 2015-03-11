@@ -1,23 +1,23 @@
 <div class="container main-page">
-  <div class="main-slider" >
-
-    <div  ng-repeat="slide in slides" >
-        <div  ng-show="currentSlide == $index" class="slide">{{$index}}</div>
+  <div class="slider-container" >
+    <div class="slide-holder" >
+    <div ng-repeat="slide in sliderState.slides" >
+        <div ng-style="{ 'background': slide +'no-repeat 0 0'}" ng-show="sliderState.currentSlide == $index+1" class="slide"></div>
     </div>
-
-    <span ng-click="slider.nextSlide()" ng-show="slider.hasNext()" class="fa-stack fa-lg chevron-holder right">
+    </div>
+    <span ng-click="nextSlide()" ng-show="sliderState.hasNext" class="fa-stack fa-lg chevron-holder right">
       <i class="fa fa-circle-thin fa-stack-2x"></i>
       <i class="fa fa-chevron-right fa-stack-1x"></i>
     </span>
 
-     <span ng-click="slider.previousSlide()" ng-show="slider.hasPrevious()" class="fa-stack fa-lg chevron-holder left">
+     <span ng-click="prevSlide()" ng-show="sliderState.hasPrevious" class="fa-stack fa-lg chevron-holder left">
       <i class="fa fa-circle-thin fa-stack-2x"></i>
       <i class="fa fa-chevron-left fa-stack-1x"></i>
     </span>
 
     <ul class="slide-list-set">
-      <li ng-repeat="slide in slides" class="slide-list">
-        <div></div>
+      <li ng-class="{active: $index+1 == sliderState.currentSlide}" ng-repeat="slide in sliderState.slides" ng-click="setSlide($index)" class="slide-list">
+        <div ></div>
       </li>
     </ul>
   </div>
